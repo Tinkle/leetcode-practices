@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
  * @lc app=leetcode.cn id=118 lang=golang
  *
@@ -78,7 +76,7 @@ func generate(numRows int) [][]int {
 }
 
 // @lc code=end
-func main() {
-	nums := generate(6)
-	fmt.Println(nums, "nums")
-}
+// func main() {
+// 	nums := generate(6)
+// 	fmt.Println(nums, "nums")
+// }
