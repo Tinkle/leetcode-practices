@@ -2,44 +2,83 @@ package main
 
 // import (
 // 	"fmt"
+// 	"time"
 // )
 
-// func romanToArabic(numeral string) int {
-// 	romanMap := map[rune]int{
-// 		'M': 1000,
-// 		'D': 500,
-// 		'C': 100,
-// 		'L': 50,
-// 		'X': 10,
-// 		'V': 5,
-// 		'I': 1,
-// 	}
+// // var quit = make(chan bool)
 
-// 	arabicVals := make([]int, len(numeral)+1)
+// // func fib(c chan int) {
+// // 	x, y := 1, 1
 
-// 	for index, digit := range numeral {
-// 		if val, present := romanMap[digit]; present {
-// 			arabicVals[index] = val
-// 		} else {
-// 			fmt.Printf("Error: The roman numeral %s has a bad digit: %c\n", numeral, digit)
-// 			return 0
+// // 	for {
+// // 		select {
+// // 		case c <- x:
+// // 			x, y = y, x+y
+// // 		case <-quit:
+// // 			fmt.Println("Done calculating Fibonacci!")
+// // 			return
+// // 		}
+// // 	}
+// // }
+
+// // func main() {
+// // 	start := time.Now()
+
+// // 	command := ""
+// // 	data := make(chan int)
+
+// // 	go fib(data)
+
+// // 	for {
+// // 		num := <-data
+// // 		fmt.Println(num)
+// // 		fmt.Scanf("%s", &command)
+// // 		if command == "quit" {
+// // 			quit <- true
+// // 			break
+// // 		}
+// // 	}
+
+// // 	time.Sleep(1 * time.Second)
+
+// // 	elapsed := time.Since(start)
+// // 	fmt.Printf("Done! It took %v seconds!\n", elapsed.Seconds())
+// // }
+
+// var quit = make(chan bool)
+
+// func fib(c chan int) {
+// 	x, y := 1, 1
+// 	for {
+// 		select {
+// 		case c <- x:
+// 			x, y = y, x+y
+// 		case <-quit:
+// 			fmt.Println("Done calculating Fibonacci!")
+// 			return
 // 		}
 // 	}
-
-// 	total := 0
-
-// 	for index := 0; index < len(numeral); index++ {
-// 		if arabicVals[index] < arabicVals[index+1] {
-// 			arabicVals[index] = -arabicVals[index]
-// 		}
-// 		total += arabicVals[index]
-// 	}
-
-// 	return total
 // }
 
 // func main() {
-// 	// fmt.Println("MCLX is", romanToArabic("MCLX"))
-// 	// fmt.Println("MCMXCIX is ", romanToArabic("MCMXCIX"))
-// 	fmt.Println("MCMZ is", romanToArabic("MCMG"))
+// 	fmt.Println("Please show your go language")
+// 	start := time.Now()
+
+// 	command := ""
+// 	data := make(chan int)
+// 	go fib(data)
+// 	for {
+// 		num := <-data
+// 		fmt.Println(num)
+// 		fmt.Scanf("%s", &command)
+// 		if command == "quit" {
+// 			quit <- true
+// 			break
+// 		}
+// 	}
+// 	time.Sleep(1 * time.Second)
+
+// 	elapsed := time.Since(start)
+// 	fmt.Printf("Done! It took %v seconds!\n", elapsed.Seconds())
+
 // }
